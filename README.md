@@ -1,4 +1,4 @@
-<img width="967" height="538" alt="architecture_diagram " src="https://github.com/user-attachments/assets/58164c94-3c2e-4a89-b0fc-6823489af532" /># zkNIDS — Zero-Knowledge Network Intrusion Detection System
+#zkNIDS — Zero-Knowledge Network Intrusion Detection System
 
 A three-phase pipeline that monitors network traffic, detects intrusion patterns, and generates **cryptographic proofs** that detection was performed correctly — **without revealing the underlying network data**.
 
