@@ -1,4 +1,4 @@
-# zkNIDS — Zero-Knowledge Network Intrusion Detection System
+<img width="967" height="538" alt="architecture_diagram " src="https://github.com/user-attachments/assets/58164c94-3c2e-4a89-b0fc-6823489af532" /># zkNIDS — Zero-Knowledge Network Intrusion Detection System
 
 A three-phase pipeline that monitors network traffic, detects intrusion patterns, and generates **cryptographic proofs** that detection was performed correctly — **without revealing the underlying network data**.
 
@@ -8,22 +8,7 @@ Any third party can verify these proofs independently with **zero trust assumpti
 
 ## Architecture
 
-```
-┌──────────────────────────┐     ┌──────────────────────────────┐
-│   Agent Host (× N)       │     │   Aggregator (10.0.0.50)     │
-│                          │     │                              │
-│   Phase 1 (eBPF/XDP)    │────▶│   server.py (FastAPI)        │
-│   Phase 2 (Detector)    │HTTP │   dashboard/index.html       │
-│   zknids_agent.py        │     │   phase3-prover (Rust)       │
-└──────────────────────────┘     └──────────────────────────────┘
-                                          │
-                                          ▼
-                                 ┌──────────────────────┐
-                                 │  Standalone Verifier  │
-                                 │  (phase3-verify)      │
-                                 │  Zero trust. No keys. │
-                                 └──────────────────────┘
-```
+<img width="967" height="538" alt="architecture_diagram " src="https://github.com/user-attachments/assets/1b124240-f222-486f-915e-5f91ef7e67cb" />
 
 ### Phase 1 — eBPF/XDP Kernel Telemetry
 Attaches eBPF programs at the XDP hook and tracepoints in the Linux kernel. Counts packets, SYN flags, bytes, fragments, flow hashes, malformed headers, and execve syscalls. Emits JSON snapshots to stdout every second.
