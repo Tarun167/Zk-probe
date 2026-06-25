@@ -258,4 +258,5 @@ PLONK+IPA eliminates trusted setup entirely while maintaining practical proof si
 
 ## License
 
-Academic project — Master of Technology Computer Science.
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0).
+See the LICENSE file for details.
